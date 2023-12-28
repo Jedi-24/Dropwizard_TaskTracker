@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Dropwizard_TaskTracker.iml" filepath="$PROJECT_DIR$/.idea/Dropwizard_TaskTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TaskTrackerServer/TaskTracker.iml" filepath="$PROJECT_DIR$/TaskTrackerServer/TaskTracker.iml" />
     </modules>
   </component>
 </project>

@@ -5,7 +5,6 @@ import com.Jedi.dao.taskDao;
 import com.Jedi.entity.taskEntity;
 import com.Jedi.resources.taskResource;
 import io.dropwizard.core.Application;
-import io.dropwizard.core.Configuration;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
 import io.dropwizard.db.DataSourceFactory;

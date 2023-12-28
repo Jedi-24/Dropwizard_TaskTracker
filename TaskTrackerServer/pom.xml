@@ -28,5 +28,13 @@
             <artifactId>dropwizard-hibernate</artifactId>
             <version>4.0.5</version>
         </dependency>
+
+        <!-- NEVER FORGET THIS DEPENDENCY! -->
+        <!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.3.2</version>
+        </dependency>
     </dependencies>
 </project>

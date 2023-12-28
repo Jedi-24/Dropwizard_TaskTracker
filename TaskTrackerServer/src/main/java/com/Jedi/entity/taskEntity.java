@@ -57,6 +57,17 @@ public class taskEntity {
         this.targetDate = targetDate;
     }
 
+    public Integer getStatusId() {
+        return statusId;
+    }
+
+    public void setStatusId(Integer statusId) {
+        this.statusId = statusId;
+    }
+
     @Column(name = "targetDate")
     private String targetDate;
+
+    @Column(name = "statusId")
+    private Integer statusId;
 }
