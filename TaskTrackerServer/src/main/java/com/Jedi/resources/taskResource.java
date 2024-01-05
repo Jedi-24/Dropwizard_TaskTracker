@@ -35,9 +35,12 @@ public class taskResource {
     @Path("/store")
     @UnitOfWork
     public String postTask(@Valid taskEntity newTask) {
-        if(Objects.equals(tskDao.saveNewTask(newTask), Response.ok().toString())) {
-            return Response.ok().toString();
-        } else return Response.serverError().toString();
+        try {
+            tskDao.saveNewTask(newTask);
+            return "Task Saved";
+        } catch (Exception e) {
+            return e.getMessage();
+        }
     }
 
     // get all tasks:
@@ -70,6 +73,12 @@ public class taskResource {
     public String deleteTask(@PathParam("id") Integer delId) {
         return tskDao.deleteTask(delId);
     }
+
+    /*
+    * The @UnitOfWork annotation in Dropwizard hides the boilerplate code for opening and closing a Hibernate Session,
+    *  and beginning, committing, and rolling back a transaction.
+    *  It can only be applied to a resource (Jersey) end-point method.
+    * */
 
     @GET
     public String checker() {

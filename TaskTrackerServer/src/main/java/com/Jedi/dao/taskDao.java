@@ -24,12 +24,12 @@ public class taskDao extends AbstractDAO<taskEntity> {
 
     // here I write methods to communicate with my mariaDB database instance: CRUD.
     public String saveNewTask(taskEntity newTask) {
-        newTask.setStatusId(501);
+//        newTask.setStatusId(501); // can be used to give default status to the tasks, but maybe not necessary.
         try{
             currentSession().persist(newTask);
-            return Response.serverError().toString();
-        } catch (Exception exception) {
             return Response.ok().toString();
+        } catch (Exception exception) {
+            return exception.getMessage();
         }
     }
 
@@ -68,7 +68,7 @@ public class taskDao extends AbstractDAO<taskEntity> {
             currentSession().remove(getTask(deleteId));
             return Response.ok().toString();
         } catch (Exception ignored) {
-            return Response.serverError().toString();
+            return ignored.getMessage();
         }
     }
 }

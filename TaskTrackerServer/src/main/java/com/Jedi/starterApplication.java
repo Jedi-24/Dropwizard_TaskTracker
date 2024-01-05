@@ -24,7 +24,7 @@ public class starterApplication extends Application<customConfig> {
         }
     };
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Throwable {
         new starterApplication().run(args);
     }
 
@@ -34,7 +34,7 @@ public class starterApplication extends Application<customConfig> {
     }
 
     @Override
-    public void run(customConfig confObj, Environment environment) throws Exception {
+    public void run(customConfig confObj, Environment environment) {
         System.out.println("Jedi is here !");
 
         // important to make object of taskDao here :->
@@ -44,3 +44,13 @@ public class starterApplication extends Application<customConfig> {
         environment.jersey().register(new taskResource(tDao));
     }
 }
+
+/*
+* command used to enter terminal for docker:
+* docker exec -it <container-id> [bash OR sh]
+* some containers might not have bash installed.
+* above, it stands for "interactive terminal".
+*
+* Also, next time use docker images for the DBs and any other requirement.
+* Hence, use of Docker-Compose is necessary to run our made up image and other pulled images.
+* */

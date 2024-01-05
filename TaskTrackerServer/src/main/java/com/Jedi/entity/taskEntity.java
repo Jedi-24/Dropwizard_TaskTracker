@@ -8,8 +8,8 @@ public class taskEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer taskId;
 
-    @Column(name = "title")
-    private String taskTitle;
+    @Column(name = "title") // mapping the "taskTitle" on "title" from the table...
+    private String taskTitle; // use the request Json object key as this variableName only...
 
     @Column(name = "description")
     private String taskDesc;
@@ -68,6 +68,5 @@ public class taskEntity {
     @Column(name = "targetDate")
     private String targetDate;
 
-    @Column(name = "statusId")
     private Integer statusId;
 }
